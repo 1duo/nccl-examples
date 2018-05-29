@@ -101,8 +101,7 @@ int main(int argc, char *argv[]) {
     CUDACHECK(cudaMalloc(&recvbuff, size * sizeof(float)));
     CUDACHECK(cudaStreamCreate(&s));
 
-    // initializing NCCL#include <stdlib.h>
-
+    // initializing NCCL
     NCCLCHECK(ncclCommInitRank(&comm, nRanks, id, myRank));
 
     // communicating using NCCL
